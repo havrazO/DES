@@ -1,4 +1,4 @@
-package randomVariate;
+package PRandom;
 
 import umontreal.ssj.randvar.*;
 import umontreal.ssj.rng.*;

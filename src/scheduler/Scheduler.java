@@ -1,23 +1,24 @@
 package scheduler;
 
+import java.time.LocalDateTime;
 import java.util.PriorityQueue;
 
 public class Scheduler {
 	
-    PriorityQueue<SchedulerEvent> events;
+    PriorityQueue<Event> pq;
     
     public Scheduler() {
-		this.events = new PriorityQueue<>();
+		this.pq = new PriorityQueue<>();
 	}
-	public void sendEvent(SchedulerEvent event) {
+	public void addEventToPq(Event event) {
 		//TODO add event to  priority queue
-		this.events.add(event);
+		this.pq.add(event);
 	}
 
-	public long getCurrentTime() {
+	public String getCurrentTime() {
 		// TODO Auto-generated method stub
 		
-		return 23423423;
+		return java.time.LocalDateTime.now().toString();
 	}
 	
 	
