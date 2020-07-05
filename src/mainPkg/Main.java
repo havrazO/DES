@@ -2,7 +2,7 @@ package mainPkg;
 
 import PRandom.PRandom;
 import scheduler.Event;
-import scheduler.StartEvent;
+import scheduler.Event1;
 
 public class Main {
 
