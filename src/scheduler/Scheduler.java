@@ -6,7 +6,7 @@ public class Scheduler {
 	
     PriorityQueue<SchedulerEvent> events;
     
-    public void Scheduler() {
+    public Scheduler() {
 		this.events = new PriorityQueue<>();
 	}
 	public void sendEvent(SchedulerEvent event) {
