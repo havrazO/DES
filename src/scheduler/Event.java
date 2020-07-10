@@ -5,4 +5,6 @@ public abstract class Event {
 	long timeStamp;
 	
 	abstract void execute();
+	
+	// no abort method cuz events are atomar ...etc nicht unterbrechbar wie prozesse 
 }
