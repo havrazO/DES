@@ -9,6 +9,12 @@ import process.process.Status;
 import scheduler.Event;
 
 public abstract class process {
+	public process(Event startEvent, Event endEvent, List<Event> events, long duration) {
+		this.events.add(startEvent);
+		this.events.add(endEvent);
+		this.events = events;
+		this.duration = duration;
+	}
 	List<Event> events;
 	long duration;
 	enum Status {
@@ -17,10 +23,9 @@ public abstract class process {
 	Status state;
 	public final void addEvent(Event event) {
 	this.events.add(event);
-	if (events.size() > 1 ) {
-		this.duration =	Collections.max(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp() - 
+	this.duration =	Collections.max(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp() - 
 						Collections.min(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp(); // nicht ganz richtig(dauer des letzten ereignis !!)
-		}
+
 	}
 	
 	public void abort(UUID uuid) {

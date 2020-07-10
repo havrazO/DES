@@ -9,10 +9,15 @@ import java.util.UUID;
 import scheduler.Event;
 
 public class processOne extends process {
-	Event startEvent;
-	Event endEvent;
-	public processOne(Event startEvent, Event endEvent) {
-	    this.events= new ArrayList<Event>();
+
+	//public processOne(Event startEvent, Event endEvent) {
+		// TODO mybe here add random waiting time to the duration of the process 
+	  //  this.events= new ArrayList<Event>();
+	//}
+
+	public processOne(Event startEvent, Event endEvent, List<Event> events, long duration) {
+		super(startEvent, endEvent, events, duration);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
