@@ -19,7 +19,7 @@ public abstract class process {
 	this.events.add(event);
 	if (events.size() > 1 ) {
 		this.duration =	Collections.max(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp() - 
-						Collections.min(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp();
+						Collections.min(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp(); // nicht ganz richtig(dauer des letzten ereignis !!)
 		}
 	}
 	
