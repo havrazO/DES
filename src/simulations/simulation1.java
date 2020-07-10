@@ -1,5 +1,7 @@
 package simulations;
 
+import java.util.Iterator;
+
 import PRandom.PRandom;
 import scheduler.Event;
 import scheduler.Event1;
@@ -29,6 +31,11 @@ public class simulation1 {
 		this.scheduler.addEventToPq(event1);
 		this.scheduler.addEventToPq(event2);
 		//rand.generate(20).forEach(result -> System.out.print(result + " , "));
+		Iterator<Event> it = this.scheduler.getPq().iterator();
+		while (it.hasNext()) {
+			this.scheduler.getPq().poll();
+			
+		}
 	}
 	
 }
