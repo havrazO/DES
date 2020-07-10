@@ -1,47 +1,32 @@
 package process;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
+import process.process.Status;
 import scheduler.Event;
 
-public class process implements Iprocess {
+public abstract class process {
 	List<Event> events;
 	long duration;
 	enum Status {
 		RUNNING, ENDED, ITERRUPTED
 		}
 	Status state;
-	public process() {
-	    this.events= new ArrayList<Event>();
+	public final void addEvent(Event event) {
+	this.events.add(event);
+	if (events.size() > 1 ) {
+		this.duration =	Collections.max(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp() - 
+						Collections.min(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp();
+		}
 	}
-
 	
-	@Override
-	public void addEvent(Event event) {
-		this.events.add(event);
-	}
-
-	@Override
 	public void abort(UUID uuid) {
-		// TODO Auto-generated method stub
-
 	}
-
-	@Override
 	public void execute() {
-		this.state = Status.RUNNING;
-		// TODO Auto-generated method stub
-
 	}
-
-	@Override
 	public void interrupt() {
-		this.state = Status.ITERRUPTED;
-
-		// TODO Auto-generated method stub
-		
 	}
-
 }
