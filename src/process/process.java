@@ -21,6 +21,8 @@ public abstract class process {
 		RUNNING, ENDED, ITERRUPTED
 		}
 	Status state;
+	
+	
 	public final void addEvent(Event event) {
 	this.events.add(event);
 	this.duration =	Collections.max(events, Comparator.comparing(e -> e.getTimeStamp())).getTimeStamp() - 
@@ -30,7 +32,7 @@ public abstract class process {
 	
 	public void abort(UUID uuid) {
 	}
-	public void execute() {
+	public void run() {
 	}
 	public void interrupt() {
 	}

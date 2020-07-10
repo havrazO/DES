@@ -26,7 +26,7 @@ public class processOne extends process {
 	}
 
 	@Override
-	public void execute() {
+	public void run() {
 		this.state = Status.RUNNING;
 		// TODO Auto-generated method stub
 
