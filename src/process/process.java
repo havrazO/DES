@@ -13,7 +13,7 @@ public abstract class process {
 		this.events.add(startEvent);
 		this.events.add(endEvent);
 		this.events = events;
-		this.duration = duration;
+		this.duration = endEvent.getTimeStamp(); // ???????????
 	}
 	List<Event> events;
 	long duration;
